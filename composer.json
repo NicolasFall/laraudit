@@ -1,0 +1,12 @@
+{
+    "name": "dandrea/audit",
+    "description": "Package for adding basic audit capabilities to Laravel 5.5+ . It supports multiauth by providing polymorphical relations with user/auditor.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dandrea nicolas",
+            "email": "dandrea.nicolas.ack@gmail.com"
+        }
+    ],
+    "require": {}
+}
