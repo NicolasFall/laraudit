@@ -8,5 +8,18 @@
             "email": "dandrea.nicolas.ack@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "illuminate/support": "^5.6",
+        "illuminate/database": "^5.6"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Audit\\Providers\\AuditServiceProvider"
+            ],
+            "aliases": {
+                "Audit": "Audit\\Classes\\AuditorFacade"
+            }
+        }
+    }
 }
