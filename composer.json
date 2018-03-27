@@ -9,8 +9,7 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.6",
-        "illuminate/database": "^5.6"
+        "laravel/framework": "*"
     },
     "extra": {
         "laravel": {
