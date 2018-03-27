@@ -11,6 +11,11 @@
     "require": {
         "laravel/framework": "*"
     },
+    "autoload": {
+        "psr-4": {
+            "Audit\\": "src/",
+        },
+    },
     "extra": {
         "laravel": {
             "providers": [
