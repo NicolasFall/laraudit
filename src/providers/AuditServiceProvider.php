@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Audit\Providers;
 
 use Audit\Classes\Auditor;
 use Illuminate\Support\ServiceProvider;
