@@ -15,7 +15,7 @@ class AuditorFacade extends Facade
         return static::FACADE_NAME;
     }
 
-    protected static function log(Auditor $auditor, Model $model, $user = null)
+    protected static function log(Model $model, $user = null)
     {
         $auditor->log_changes($model, $user);
     }
