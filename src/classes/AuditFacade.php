@@ -2,6 +2,7 @@
 
 namespace Audit\Classes;
 
+use Audit\Classes\Auditor;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -10,6 +11,12 @@ use Illuminate\Support\Facades\Facade;
 class AuditFacade extends Facade
 {
     protected const FACADE_NAME = 'Audit';
+
+    public function __construct()
+    {
+        $this->auditor = new Auditor();
+    }
+
     protected static function getFacadeAccessor()
     {
         return static::FACADE_NAME;
@@ -17,6 +24,6 @@ class AuditFacade extends Facade
 
     protected static function log(Auditor $auditor, Model $model, $user = null)
     {
-        $auditor->log_changes($model, $user);
+        $this->auditor->log_changes($model, $user);
     }
 }
