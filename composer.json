@@ -22,7 +22,7 @@
                 "Audit\\Providers\\AuditServiceProvider"
             ],
             "aliases": {
-                "Audit": "Audit\\Classes\\AuditorFacade"
+                "Audit": "Audit\\Classes\\AuditFacade"
             }
         }
     }
