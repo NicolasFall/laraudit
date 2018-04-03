@@ -3,6 +3,7 @@
 namespace Audit\Classes;
 
 use Audit\Classes\Auditor;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Facade;
 
 /**
