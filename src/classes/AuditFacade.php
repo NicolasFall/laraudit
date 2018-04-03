@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  *  Encapsulates the logic for transforma a set of changes into an audit item.
  */
-class AuditorFacade extends Facade
+class AuditFacade extends Facade
 {
     protected const FACADE_NAME = 'Audit';
     protected static function getFacadeAccessor()
