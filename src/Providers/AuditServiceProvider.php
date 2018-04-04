@@ -19,10 +19,11 @@ class AuditServiceProvider extends ServiceProvider
         });
     }
 
-    public function boot(){
+    public function boot()
+    {
         $this->publishes([
-            __DIR__.'/../config/audit.php' => config_path('audit.php'),
-            __DIR__.'/../migrations/create_audit_table.php' => database_path('create_audit_table.php')
+            realpath(__DIR__.'/../config/audit.php') => config_path('audit.php'),
+            realpath(__DIR__.'/../migrations/create_audit_table.php') => database_path('create_audit_table.php')
         ]);
     }
 }
