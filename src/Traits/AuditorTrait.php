@@ -9,16 +9,14 @@ use Audit\Models\Audit;
  */
 trait AuditorTrait
 {
-    protected const AUDITOR_ID_KEY = 'id';
-
-    public function audit()
+    public function auditor()
     {
-        return $this->morphToMany(Audit::class, 'auditable');
+        return $this->morphToMany(Audit::class, 'auditor');
     }
 
     public function getAuditorIdKey()
     {
-        return static::AUDITOR_ID_KEY;
+        return 'id';
     }
 
     public function getAuditorId()

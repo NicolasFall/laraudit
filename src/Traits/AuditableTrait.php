@@ -9,15 +9,13 @@ use Audit\Models\Audit;
  */
 trait AuditableTrait
 {
-    protected const AUDITABLE_ID_KEY = 'id';
-
-    public function audit()
+    public function auditable()
     {
-        return $this->hasMany(Audit::class);
+        return $this->hasMany(Audit::class, 'auditable');
     }
     public function getAuditableIdKey()
     {
-        return static::AUDITABLE_ID_KEY;
+        return 'id';
     }
 
     public function getAuditableId()

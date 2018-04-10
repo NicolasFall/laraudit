@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Audit extends Model
 {
+    protected $table = 'audit';
     public function auditable()
+    {
+        return $this->morphTo();
+    }
+
+    public function auditor()
     {
         return $this->morphTo();
     }
@@ -18,7 +24,7 @@ class Audit extends Model
         $this->auditor_id = $auditor->getAuditorId();
         $this->auditor_type = $auditor->getAuditableType();
     }
-    public function set_auditable(AuditableObjectInterface $model)
+    public function set_auditable(AuditableObjectInterface $auditable)
     {
         $this->auditable_id = $auditable->getAuditableId();
         $this->auditable_type = $auditable->getAuditableType();
@@ -30,5 +36,10 @@ class Audit extends Model
     public function set_new_value($val)
     {
         $this->new_value = $val;
+    }
+
+    public function set_audited_field($field)
+    {
+        $this->audited_field = $field;
     }
 }
