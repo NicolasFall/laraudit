@@ -11,7 +11,7 @@ trait AuditableTrait
 {
     public function auditable()
     {
-        return $this->hasMany(Audit::class, 'auditable');
+        return $this->morphMany(Audit::class, 'auditable');
     }
     public function getAuditableIdKey()
     {

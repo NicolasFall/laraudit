@@ -3,6 +3,7 @@
 namespace Audit\Providers;
 
 use Audit\Classes\Auditor;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AuditServiceProvider extends ServiceProvider
@@ -22,8 +23,13 @@ class AuditServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            realpath(__DIR__.'/../config/audit.php') => config_path('audit.php'),
-            realpath(__DIR__.'/../migrations/create_audit_table.php') => database_path('create_audit_table.php')
+            realpath(__DIR__.'/../Config/audit.php') => config_path('audit.php'),
+            realpath(__DIR__.'/../Migrations/create_audit_table.php') => $this->get_migration_path(),
         ]);
+    }
+
+    protected function get_migration_path(){
+        $migration_path = database_path('migrations/' . Carbon::now()->format('Y-m-d') . '_000000_create_audit_table.php');
+        return str_replace('-', '_', $migration_path);
     }
 }

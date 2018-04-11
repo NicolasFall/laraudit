@@ -11,7 +11,7 @@ trait AuditorTrait
 {
     public function auditor()
     {
-        return $this->morphToMany(Audit::class, 'auditor');
+        return $this->morphMany(Audit::class, 'auditor');
     }
 
     public function getAuditorIdKey()
